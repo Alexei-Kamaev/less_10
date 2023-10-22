@@ -24454,4 +24454,4 @@ for (let a = 0, c = 0; a < listIPv4.length; a++) {
 for (let b = 0; b <= unigueArr.length; b++) {
     unigueSet.delete(unigueArr[b]);
 }
-console.log(`Уникальных адресов из представленных: ${listIPv4.length}, нашлось: ${unigueSet.size}`);
+console.log(`Уникальных адресов из представленных: ${listIPv4.length}, нашлось: ${unigueSet.size}.`);
