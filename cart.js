@@ -17,9 +17,9 @@
             tempCart.price = +prompt('Введите цену товара:');
             tempCart.count = +prompt('Введите количество товара:', 1);
             cart.items.push(tempCart);
-            prompt('Ещё товар? да/нет').toLowerCase().trim() == 'да' ? this.add() : this.calculateItemPrice();
+            prompt('Ещё товар? да/нет').toLowerCase().trim() == 'да' ? this.add() : this.calculate;
         },
-        calculateItemPrice () {
+        calculateItemPrice1 () {
             cart.totalPrice = cart.items.reduce((total, item) => total += item.count * item.price, 0);
             cart.count = cart.items.reduce((totalCount, item) => totalCount += item.count, 0);
             this.print();
@@ -37,6 +37,13 @@
             console.log('Корзина пуста:', JSON.stringify(cart.items));
             console.log('Общая сумма корзины:', cart.totalPrice);
             console.log('Общее количество товаров:', cart.count);
+            console.log(JSON.stringify(cart.items));
+        },
+        get calculate() {
+            cart.count = cart.items.reduce((totalCount, item) => totalCount += item.count, 0);
+            cart.totalPrice = cart.items.reduce((total, item) => total += item.count * item.price, 0);
+            this.print();
+            return cart.totalPrice;
         },
     }
     cart.add();
