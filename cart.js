@@ -25,7 +25,7 @@
             this.print();
         },
         print() {
-            console.log(JSON.stringify(cart.items));
+            console.log('JSON: ', JSON.stringify(cart.items));
             console.log('Общая сумма корзины:', cart.totalPrice);
             console.log('Общее количество товаров:', cart.count);
             this.clear();
@@ -37,7 +37,7 @@
             console.log('Корзина пуста:', JSON.stringify(cart.items));
             console.log('Общая сумма корзины:', cart.totalPrice);
             console.log('Общее количество товаров:', cart.count);
-            console.log(JSON.stringify(cart.items));
+            console.log('JSON: ', JSON.stringify(cart.items));
         },
         get calculate() {
             cart.count = cart.items.reduce((totalCount, item) => totalCount += item.count, 0);
